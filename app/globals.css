@@ -1,0 +1,73 @@
+@import "leaflet/dist/leaflet.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #0a0d10;
+  color: #f2f5f7;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  border-color: theme("colors.line.DEFAULT");
+}
+
+::selection {
+  background: rgba(255, 106, 61, 0.35);
+}
+
+/* Custom scrollbar, kept subtle */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: theme("colors.line.DEFAULT");
+  border-radius: 999px;
+  border: 2px solid #0a0d10;
+}
+
+.leaflet-container {
+  background: #0f1216 !important;
+  font-family: var(--font-body), sans-serif;
+}
+.leaflet-control-attribution {
+  background: rgba(10, 13, 16, 0.7) !important;
+  color: #5c6570 !important;
+  font-size: 10px !important;
+}
+.leaflet-control-attribution a {
+  color: #98a2ae !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid theme("colors.signal.DEFAULT");
+  outline-offset: 2px;
+}
